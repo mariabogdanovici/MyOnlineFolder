@@ -1,0 +1,76 @@
+Feature: Checking the shopping cart functionality on “www.ultra.md” website
+
+Scenario 1: User can add/remove items to/from the shopping cart
+Given the user is on “www.ultra.md” homepage
+And the user types “macbook pro 16” in the search bar
+And the user clicks the “Laptop 16,2" Apple MacBook Pro 16 A2485, Gri cosmic, M1 Max with 10-core CPU and 32-core GPU, 64GB/2048GB, macOS Monterey” product from the search results
+When the user adds the product to the shopping cart
+Then the product should be displayed in the shopping cart
+Given the user is on “www.ultra.md” homepage
+And the user types “apple watch midnight” in the search bar
+And the user clicks the “Ceas inteligent Apple Watch Series 8 GPS, 45mm, Negru” product from the search results
+When the user adds the product to the shopping cart
+And the user adds an additional piece of the product to the shopping cart
+Then the correct quantity of the products should be displayed in the shopping cart
+And the price should be updated accordingly
+Given the user is on “www.ultra.md” homepage
+And the user types “airpods pro 2” in the search bar
+And the user clicks the “Căști Apple AirPods PRO 2 (EU) MagSafe, Alb” product from the search results
+When the user adds the product to the shopping cart
+And the user adds an additional piece of the product to the shopping cart
+And the user has 2 pieces of the product to the shopping cart
+And the user removes 1 piece of the product from the shopping cart
+Then the correct quantity of the products should be displayed in the shopping cart
+And the price should be updated accordingly
+Given the user is on “www.ultra.md” homepage
+And the user types “apple keyboard” in the search bar
+And the user clicks the “Husă pentru tabletă Apple Smart Keyboard Folio for iPad Pro 3rd/4th/5th gen, 12,9", Poliuretan, Negru” product from the search results
+When the user adds the product to the shopping cart
+And the user adds 2 additional pieces of the product to the shopping cart
+Then the correct quantity of the products should be displayed in the shopping cart
+And the price should be updated accordingly
+Given the user is on “www.ultra.md” homepage
+And the user types “iphone 13 pro max” in the search bar
+And the user clicks the “Smartphone Apple iPhone 13 Pro Max, 6GB/1TB, Graphite” product from the search results
+When the user adds the product to the shopping cart
+Then the product should be displayed in the shopping cart
+
+Scenario 2: User cannot add items to the shopping cart
+Given the user is on “www.ultra.md” homepage
+And the user types “macbook pro 16” in the search bar
+And the user clicks the “Laptop 16,2" Apple MacBook Pro 16 A2485, Gri cosmic, M1 Max with 10-core CPU and 32-core GPU, 64GB/2048GB, macOS Monterey” product from the search results
+When the user adds the product to the shopping cart
+And the user adds an additional piece of the product to the shopping cart
+Then the wrong quantity of the products should be displayed in the shopping cart
+And the price should not be updated accordingly
+Given the user is on “www.ultra.md” homepage
+And the user types “apple watch midnight” in the search bar
+And the user clicks the “Ceas inteligent Apple Watch Series 8 GPS, 45mm, Negru” product from the search results
+When the user adds the product to the shopping cart
+And the user adds 4 additional pieces of the product to the shopping cart
+And the user adds an additional 6th piece of the product to the shopping cart
+Then the wrong quantity of the products should be displayed in the shopping cart
+And the price should not be updated accordingly
+Given the user is on “www.ultra.md” homepage
+And the user types “ipad pro 12” in the search bar
+And the user clicks the “Tabletă Apple iPad Pro 12.9-inch (6th gen) A2437, WiFi + Cellular, 8GB/256GB, Argintiu” product from the search results
+When the user adds the product to the shopping cart
+And the user adds an additional piece of the product to the shopping cart
+And the user adds an additional 3rd piece of the product to the shopping cart
+Then the wrong quantity of the products should be displayed in the shopping cart
+And the price should not be updated accordingly
+Given the user is on “www.ultra.md” homepage
+And the user types “apple keyboard” in the search bar
+And the user clicks the “Husă pentru tabletă Apple Smart Keyboard Folio for iPad Pro 3rd/4th/5th gen, 12,9", Poliuretan, Negru” product from the search results
+When the user adds the product to the shopping cart
+And the user adds 2 additional pieces of the product to the shopping cart
+And the user adds an additional 4th piece of the product to the shopping cart
+Then the wrong quantity of the products should be displayed in the shopping cart
+And the price should not be updated accordingly
+Given the user is on “www.ultra.md” homepage
+And the user types “iphone 13 pro max” in the search bar
+And the user clicks on the “Smartphone Apple iPhone 13 Pro Max, 6GB/1TB, Graphite” product from the search results
+When the user adds the product to the shopping cart
+And the user adds an additional piece of the product to the shopping cart
+Then the wrong quantity of the products should be displayed in the shopping cart
+And the price should not be updated accordingly
