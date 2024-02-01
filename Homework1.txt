@@ -1,0 +1,31 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework1 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		driverChrome.get("https://darwin.md/");
+		
+		driverChrome.findElement(By.cssSelector("body > div.container > div.fixed-top-header > div > div > ul > li.d-none.d-lg-inline-block.mr-2 > a")).click();
+		driverChrome.findElement(By.cssSelector("#main > div > div > div.htag > a.capital-show-locations.pr-0")).click();
+		driverChrome.findElement(By.cssSelector("#main > div > div > div.htag > a:nth-child(5)")).click();
+		driverChrome.findElement(By.cssSelector("#main > div > div > div.htag > a:nth-child(13) > span.goto-address")).click();
+		driverChrome.findElement(By.cssSelector("body > div.container > div.fixed-top-header > div > header > div.header-menu.order-1.order-lg-0 > button > i")).click();
+		driverChrome.findElement(By.cssSelector("body > div.container > div.fixed-top-header > div > header > div.header-menu.order-1.order-lg-0.active_menu.visible > div > div.menu-items > ul > li:nth-child(1) > a")).click();
+		driverChrome.findElement(By.cssSelector("#main > div > div.row.accessory.mt-3 > div:nth-child(1) > div > a > img")).click();
+		driverChrome.findElement(By.cssSelector("#main > section.device-subcategories > div > div > div > div > div > a:nth-child(4)")).click();
+		driverChrome.findElement(By.cssSelector("#main > section.products > div > div > div > div:nth-child(2) > figure > div.grid-item > div > a > img")).click();
+		driverChrome.findElement(By.cssSelector("body > div.container > div.fixed-top-header > div > header > div.form-wrapper.mainmenu.w-100.rounded-0.d-flex.align-items-center > a")).click();
+		driverChrome.findElement(By.cssSelector("#main > section.blogs > div > div > div:nth-child(1) > div > a > img")).click();
+		driverChrome.findElement(By.cssSelector("body > div.container > div.fixed-top-header > div > header > div.logo > a > img")).click();
+		driverChrome.findElement(By.cssSelector("#main > section.container.mt-5 > div > ul > li:nth-child(1) > a")).click();		
+		
+	}
+
+}
+
