@@ -1,0 +1,28 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework2 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		//Link Text Locator
+
+		driverChrome.get("https://www.ebay.com/");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.linkText("Payments Terms of Use")).click();
+		
+		driverChrome.get("https://www.ebay.com/");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.linkText("Accessibility")).click();
+		
+		driverChrome.get("https://www.ebay.com/");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.linkText("User Agreement")).click();	
+
+	}
+
+}

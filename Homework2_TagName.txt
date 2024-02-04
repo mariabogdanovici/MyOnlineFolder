@@ -1,0 +1,21 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework2 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+
+		//Tag Name Locator
+		
+		driverChrome.get("https://mamico.md/");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.tagName("li")).click();
+		driverChrome.findElement(By.tagName("img")).click();
+		
+	}
+
+}

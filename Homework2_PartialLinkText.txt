@@ -1,0 +1,42 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework2 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		
+		//Partial Link Text Locator (functioneaza doar fiecare web element separat, celelalte trebuie sa fie comment, asa e la mine la darwin.md)
+		
+		driverChrome.get("https://darwin.md/");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.className("accept_cookie")).click();
+		driverChrome.findElement(By.partialLinkText("Politica")).click();
+		
+		driverChrome.get("https://darwin.md/evolution/apple-iphone-evolutia-celor-mai-indragite-smartphoneuri");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.className("accept_cookie")).click();
+		driverChrome.findElement(By.partialLinkText("SE")).click();
+		
+		driverChrome.get("https://darwin.md/evolution/evolutia-monitoarelor-pc");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.className("accept_cookie")).click();
+		driverChrome.findElement(By.partialLinkText("noile monitoare")).click();
+		
+		driverChrome.get("https://darwin.md/evolution/playstation-de-la-incepator-la-provocarea-visurilor-tale");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.className("accept_cookie")).click();
+		driverChrome.findElement(By.partialLinkText("Digital Edition")).click();
+		
+		driverChrome.get("https://darwin.md/evolution/xiaomi-mi-band-scurt-istoric");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.className("accept_cookie")).click();
+		driverChrome.findElement(By.partialLinkText("1S")).click();
+
+
+	}
+
+}

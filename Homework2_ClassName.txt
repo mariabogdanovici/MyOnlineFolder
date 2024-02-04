@@ -1,0 +1,22 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework2 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		//Class Name Locator
+		
+		driverChrome.get("https://aliexpress.ru/?gatewayAdapt=glo2rus");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.className("RedHeader_Search__searchField__73iif")).sendKeys("adapter");
+		driverChrome.findElement(By.className("RedHeader_Search__submit__73iif")).click();
+		
+
+	}
+
+}

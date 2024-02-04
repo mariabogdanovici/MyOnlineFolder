@@ -1,0 +1,22 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework2 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		//ID Locator
+		
+		driverChrome.get("https://casacurata.md/");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.id("det_img_1901580029")).click();
+		driverChrome.findElement(By.id("det_img_3886742389")).click();
+		driverChrome.findElement(By.id("det_img_1897865309")).click();
+		
+	}
+
+}
