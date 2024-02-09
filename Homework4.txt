@@ -1,0 +1,73 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Homework4 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		//CSS ID & CSS Class (inainte de randul 21 as pune ceva ca sa astepte incarcarea paginii, daca as sti cum)
+		
+		driverChrome.get("https://olx.ro/");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+		driverChrome.findElement(By.cssSelector("#search")).click();
+		driverChrome.findElement(By.cssSelector("#search")).sendKeys("canapea");
+		driverChrome.findElement(By.cssSelector("button.css-1xla5xw")).click();
+		driverChrome.findElement(By.cssSelector("span.css-13xlyet")).click();
+		
+		//CSS Other Atributes
+		
+//		driverChrome.get("https://olx.ro/");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//		driverChrome.findElement(By.cssSelector("svg[aria-label='Mesaje favorite']")).click();
+//		driverChrome.findElement(By.cssSelector("span[class='css-1kpgv52']")).click();
+//		driverChrome.findElement(By.cssSelector("input[data-testid='search-input']")).click();
+//		driverChrome.findElement(By.cssSelector("input[aria-invalid='false']")).sendKeys("cybex");
+//		driverChrome.findElement(By.cssSelector("button[name='searchBtn']")).click();	
+//		driverChrome.findElement(By.cssSelector("a[type='button']")).click();
+		
+		//CSS 2 Atributes
+		
+//		driverChrome.get("https://olx.ro/");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//		driverChrome.findElement(By.cssSelector("a[data-cy='myolx-link'][class='css-12l1k7f']")).click();
+
+		//CSS Prefix Substring
+		
+//		driverChrome.get("https://olx.ro/");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//		driverChrome.findElement(By.cssSelector("img[class^='css-zkc2']")).click();
+		
+		//CSS Matching Substring
+		
+//		driverChrome.get("https://olx.ro/");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//		driverChrome.findElement(By.cssSelector("a[data-testid*='ner-b']")).click();
+		
+		//CSS Direct Child or Sub-Child
+		
+//		driverChrome.get("https://www.olx.ro/animale-de-companie/caini/");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//		driverChrome.findElement(By.cssSelector("div[class='css-j1l9xo']>span[class='css-1dqv76w']")).click();
+		
+		//CSS Next Sibling
+		
+//		driverChrome.get("https://olx.ro/");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.cssSelector("#onetrust-accept-btn-handler")).click();
+//		driverChrome.findElement(By.cssSelector("a[class='css-o73al1']+a")).click();
+
+
+	}
+
+}

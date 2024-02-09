@@ -1,0 +1,57 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework3 {
+
+	public static void main(String[] args) {
+		
+		ChromeDriver driverChrome = new ChromeDriver();		
+		
+		//XPath Relative
+		
+		driverChrome.get("https://olx.ro");
+		driverChrome.manage().window().maximize();
+		driverChrome.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+		driverChrome.findElement(By.xpath("//input[@id='search']")).click();
+		
+		//XPath Absolute
+		
+//		driverChrome.get("https://olx.ro");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+//		driverChrome.findElement(By.xpath("/html/body/div/div/div/div/div/div/div/a/img")).click();
+		
+		//XPath starts-with & XPath contains
+		
+//		driverChrome.get("https://olx.ro");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+//		driverChrome.findElement(By.xpath("//input[starts-with(@data-testid, 'search')]")).sendKeys("laptop");
+//		driverChrome.findElement(By.xpath("//button[contains(@name, 'search')]")).click();
+		
+		//XPath text
+				
+//		driverChrome.get("https://olx.ro");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+//		driverChrome.findElement(By.xpath("//a[text()='OLX marketplace']")).click();		
+		
+		// XPath AND
+		
+//		driverChrome.get("https://olx.ro");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+//		driverChrome.findElement(By.xpath("//a[@title='How to OLX' and @target='_blank']")).click();
+		
+		// XPath OR
+		
+//		driverChrome.get("https://olx.ro");
+//		driverChrome.manage().window().maximize();
+//		driverChrome.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
+//		driverChrome.findElement(By.xpath("//a[@data-testid='banner-btn' or @class='css-j0v5zm']")).click();
+
+	}
+
+}
