@@ -1,0 +1,118 @@
+package my_Automation;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Homework9 {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		// Common
+		
+		driverChrome.get("https://www.farfetch.com/md/");
+		driverChrome.manage().window().maximize();
+		driverChrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		//Part1
+		
+		Date currentDate = new Date();		
+		String screenshotFileName = currentDate.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");		
+		File screenshotFile1 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile1, new File(".//screenshot/" + screenshotFileName + ".png"));		
+		
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[2]/button[2]")).click();		
+		driverChrome.findElement(By.xpath("//*[@id=\"tab-1\"]")).click();
+		
+		Date currentDate2 = new Date();
+		String screenshotFileName2 = currentDate2.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+		File screenshotFile2 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile2, new File(".//screenshot/" + screenshotFileName2 + ".png"));
+		
+		driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-1\"]/form/div[1]/div/input")).sendKeys("maria.midrigan@gmail.com");
+		
+		Date currentDate3 = new Date();
+		String screenshotFileName3 = currentDate3.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+		File screenshotFile3 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile3, new File(".//screenshot/" + screenshotFileName3 + ".png"));
+			
+		WebElement firstTextArea = driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-1\"]/form/div[1]/div/input"));
+		Actions action = new Actions(driverChrome);
+		action.keyDown(firstTextArea, Keys.CONTROL).sendKeys("a").sendKeys("c").build().perform();
+		WebElement secondTextArea = driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-1\"]/form/div[2]/div/div/input"));
+		action.keyDown(secondTextArea, Keys.CONTROL).sendKeys("a").sendKeys("v").build().perform();
+		driverChrome.findElement(By.xpath("//*[@id=\"root\"]/div[3]/div[2]/div[4]/div/button")).click();
+
+		Date currentDate4 = new Date();
+		String screenshotFileName4 = currentDate4.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+		File screenshotFile4 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile4, new File(".//screenshot/" + screenshotFileName4 + ".png"));
+		
+		String firstPageTitle = driverChrome.getTitle();
+		System.out.println(firstPageTitle);
+		String secondPageTitle = driverChrome.getTitle();
+		System.out.println(secondPageTitle);
+		driverChrome.switchTo().window("FARFETCH Moldova | The Global Destination for Modern Luxury");
+		
+		Date currentDate5 = new Date();
+		String screenshotFileName5 = currentDate5.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+		File screenshotFile5 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshotFile5, new File(".//screenshot/" + screenshotFileName5 + ".png"));
+
+		//Part2
+		
+//		driverChrome.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div/div[2]/div/article[1]/a/div/div/div/picture/img")).click();
+//		
+//		Date currentDate6 = new Date();
+//		String screenshotFileName6 = currentDate6.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+//		File screenshotFile6 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(screenshotFile6, new File(".//screenshot/" + screenshotFileName6 + ".png"));	
+//		
+//		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[2]/div/div[2]/form/div/input")).click();
+//		
+//		Date currentDate7 = new Date();
+//		String screenshotFileName7 = currentDate7.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+//		File screenshotFile7 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(screenshotFile7, new File(".//screenshot/" + screenshotFileName7 + ".png")); 
+//		
+//		driverChrome.findElement(By.xpath("//*[@id=\"search\"]")).click();
+//		driverChrome.findElement(By.xpath("//*[@id=\"search\"]")).sendKeys("furla");
+//		
+//		Date currentDate8 = new Date();
+//		String screenshotFileName8 = currentDate8.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+//		File screenshotFile8 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(screenshotFile8, new File(".//screenshot/" + screenshotFileName8 + ".png"));
+//		
+//		driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-141258\"]/ul/li[1]/a/span/span")).click();
+//		
+//		Date currentDate9 = new Date();
+//		String screenshotFileName9 = currentDate9.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+//		File screenshotFile9 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(screenshotFile9, new File(".//screenshot/" + screenshotFileName9 + ".png"));
+//		
+//		driverChrome.findElement(By.xpath("//*[@id=\"txtSearch\"]")).sendKeys(Keys.ARROW_DOWN);
+//		driverChrome.findElement(By.xpath("//*[@id=\"txtSearch\"]")).sendKeys(Keys.ENTER);
+//	
+//		Date currentDate10 = new Date();
+//		String screenshotFileName10 = currentDate10.toString().replace(":", "-").replace(" ", "-").replace("-EET-2024", "");	
+//		File screenshotFile10 = ((TakesScreenshot) driverChrome).getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(screenshotFile10, new File(".//screenshot/" + screenshotFileName10 + ".png"));
+
+	
+
+	}
+
+
+}

@@ -1,0 +1,54 @@
+package my_Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Homework8 {
+
+public static void main(String[] args) throws InterruptedException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		// #25 DropDowns & AutoSuggestions
+		
+		driverChrome.get("https://md.iherb.com/");	
+		driverChrome.manage().window().maximize();
+		Thread.sleep(4000);
+		driverChrome.findElement(By.xpath("//*[@id=\"txtSearch\"]")).click();
+		Thread.sleep(4000);
+		driverChrome.findElement(By.xpath("//*[@id=\"txtSearch\"]")).sendKeys("omega");
+		Thread.sleep(4000);
+		driverChrome.findElement(By.xpath("//*[@id=\"txtSearch\"]")).sendKeys(Keys.ARROW_DOWN);
+		driverChrome.findElement(By.xpath("//*[@id=\"txtSearch\"]")).sendKeys(Keys.ARROW_DOWN);
+		Thread.sleep(4000);
+		driverChrome.findElement(By.xpath("//*[@id=\"txtSearch\"]")).sendKeys(Keys.ENTER);
+		
+		// #27 Scrolling
+		
+//		driverChrome.get("https://md.iherb.com/");
+//		driverChrome.manage().window().maximize();
+//		WebElement supplements = driverChrome.findElement(By.xpath("//*[@id=\"best-selling-categories\"]/div/button[1]"));
+//		Actions scrollingDown = new Actions(driverChrome);
+//		scrollingDown.moveToElement(supplements);
+//		scrollingDown.perform();
+//		Thread.sleep(4000);
+//		WebElement sports = driverChrome.findElement(By.xpath("//*[@id=\"hp-module-shop-by-category\"]/div/div/div/div[1]/ul/li[2]/a/div/img"));
+//		Actions scrollingUp = new Actions(driverChrome);
+//		scrollingUp.moveToElement(sports);
+//		scrollingUp.perform();
+		
+		// #31 MouseHover
+		
+//		driverChrome.get("https://md.iherb.com/");
+//		driverChrome.manage().window().maximize();
+//		WebElement menuBrands = driverChrome.findElement(By.xpath("//*[@id=\"universal-branded-header\"]/div[3]/div[2]/div[1]/div[1]/div[4]/button"));
+//		Actions mouseHover = new Actions(driverChrome);
+//		mouseHover.moveToElement(menuBrands).perform();
+		
+
+		
+
+	}
+
+}
