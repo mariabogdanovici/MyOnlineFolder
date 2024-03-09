@@ -1,0 +1,362 @@
+package my_Automation;
+
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Homework10 {
+	
+	@Test(priority=1, description="OpenPage", groups="main")
+	public void OpenPage() throws InterruptedException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		Thread.sleep(4000);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=1, description="GetTitle", groups="main")
+	public void verifyMainPageTitle() {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should get the Page Title using getTitle(); method
+		String actualPageTitle = driverChrome.getTitle();
+		String expectedPageTitle = "FARFETCH Moldova | The Global Destination for Modern Luxury";
+		System.out.println("Now the Page Title will be verified");
+		
+		//we should compare the expected with the actual Page Title using assertEqualls
+		Assert.assertEquals(actualPageTitle, expectedPageTitle, "Mesaj de eroare personalizat"); 
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+		
+	@BeforeMethod
+	public void BeforeMethod() {
+		
+		//we should print the text before each test will be executed
+		System.out.println("Executing setup before each test method");
+		
+	}
+	
+	@AfterTest
+	public void LastTestCase() {
+		
+		//we should print the text after all tests were executed
+		System.out.println("This is executed after all test methods in the test class");
+	
+	}
+	
+	@Test(priority=2, description="SignInButton", groups="click")
+	public void SignInButton() throws InterruptedException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click the "Sign in" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[2]/button[2]")).click();
+		
+		Thread.sleep(4000);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=2, description="ImNewHereCategory", groups="click")
+	public void ImNewHereCategory() throws InterruptedException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click the "Sign in" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[2]/button[2]")).click();
+		
+		Thread.sleep(4000);
+		
+		//we should click the "I'M NEW HERE" option using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"tab-1\"]")).click();
+		
+		Thread.sleep(3000);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=1, description="CurrentURL", groups="main")
+	public void CurrentURL() {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();	
+		
+		//we should print current URL using getCurrentUrl(); method
+		String currentUrl = driverChrome.getCurrentUrl();
+		System.out.println("Current address is: " + currentUrl);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=3, description="TypeInNamePlaceholder", groups="typetext")
+	public void TypeInNamePlaceholder() throws InterruptedException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click the "Sign in" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[2]/button[2]")).click();
+		
+		Thread.sleep(4000);
+		
+		//we should click the "I'M NEW HERE" option using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"tab-1\"]")).click();
+		
+		//we should type the text in the "Name" placeholder using findElement(By.xpath()).sendKeys(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-1\"]/form/div[1]/div/input")).sendKeys("maria.midrigan@gmail.com");
+		
+		Thread.sleep(3000);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=3, description="CopyPasteTypedText", groups="typetext")
+	public void CopyPasteTypedText() throws InterruptedException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click the "Sign in" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[2]/button[2]")).click();
+		
+		Thread.sleep(3000);
+		
+		//we should click the "I'M NEW HERE" option using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"tab-1\"]")).click();
+		
+		//we should type the text in the "Name" placeholder using findElement(By.xpath()).sendKeys(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-1\"]/form/div[1]/div/input")).sendKeys("maria.midrigan@gmail.com");
+		
+		Thread.sleep(5000);
+		
+		//we should find the placeholder from which the text will be copied using findElement(By.xpath()); method
+		WebElement firstTextArea = driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-1\"]/form/div[1]/div/input"));
+		
+		//we should select all text and copy using keyDown().sendKeys("a").sendKeys("c").build().perform(); method
+		Actions action = new Actions(driverChrome);
+		action.keyDown(firstTextArea, Keys.CONTROL).sendKeys("a").sendKeys("c").build().perform();
+		
+		Thread.sleep(3000);
+		
+		//we should find the placeholder to which the text will be pasted using findElement(By.xpath()); method
+		WebElement secondTextArea = driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-1\"]/form/div[2]/div/div/input"));
+		
+		//we should select all existing text and paste the previously copied text using keyDown().sendKeys("a").sendKeys("v").build().perform(); method
+		action.keyDown(secondTextArea, Keys.CONTROL).sendKeys("a").sendKeys("v").build().perform();
+		
+		Thread.sleep(3000);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=2, description="CloseSignInWindow", groups="click")
+	public void CloseSignInWindow() {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		driverChrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click the "Sign in" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[2]/button[2]")).click();
+		
+		//we should click the "I'M NEW HERE" option using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"tab-1\"]")).click();
+		
+		//we should click the close button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"root\"]/div[3]/div[2]/div[4]/div/button")).click();
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=1, description="GetTitle", groups="main")
+	public void GetTitle() {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();	
+		
+		//we should get the page title using getTitle(); method
+		String currentTitle = driverChrome.getTitle();
+		System.out.println("Current title is: " + currentTitle);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test (enabled=false)
+	public void SkipTestFAQsButton() {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		driverChrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click "FAQs" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"root\"]/footer/div/div[1]/div[1]/div/ul/li[2]/a")).click();
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+		System.out.println("This test 1 is not even executed");	
+	}
+	
+	@Test(priority=2, description="OpenWomenswearCategory", groups="click")
+	public void OpenWomenswearCategory() {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		driverChrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click "Womenswear" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[1]/div[2]/a[1]")).click();
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+	@Test(priority=2, description="ClickSearchPlaceholder", groups="click")
+	public void ClickSearchPlaceholder() {
+		
+		ChromeDriver driverChrome = new ChromeDriver();
+		driverChrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click "Womenswear" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[1]/div[2]/a[1]")).click();
+		
+		//we should click the "Search" placeholder using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[2]/div/div[2]/form/div/input")).click();
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+		
+	@Test(priority=3, description="TypeTextInPopUpSearchPlaceholder", groups="typetext")
+	public void TypeTextInPopUpSearchPlaceholder() throws InterruptedException {
+		
+		ChromeDriver driverChrome = new ChromeDriver();	
+		driverChrome.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		//we should open the web-site using get(); method
+		driverChrome.get("https://www.farfetch.com/md/");
+		
+		//we should maximize the window using manage().window().maximize(); method
+		driverChrome.manage().window().maximize();
+		
+		//we should click "Womenswear" button using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[1]/nav/div[1]/div[2]/a[1]")).click();
+		
+		
+		//we should click the "Search" placeholder using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"slice-header\"]/div[2]/div/div[2]/form/div/input")).click();
+		
+		//we should click the PopUp "Search" placeholder using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"search\"]")).click();
+		
+		
+		//we should type the text in the "Search" placeholder using findElement(By.xpath()).sendKeys(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"search\"]")).sendKeys("furla");
+		
+		//we should select and click the typed in category using findElement(By.xpath()).click(); method
+		driverChrome.findElement(By.xpath("//*[@id=\"tabpanel-141258\"]/ul/li[1]/a/span/span")).click();
+		
+		Thread.sleep(4000);
+		
+		//we should close the browser using quit(); method
+		driverChrome.quit();
+		
+	}
+	
+}
